@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VERSAFLEX</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Segoe UI", Arial, sans-serif; line-height: 1.6; background: #fff; color: #111; }
+
+    /* Company Header */
+    .company-header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background: #fff;
+      transition: background 0.3s;
+    }
+    .company-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #111;
+      transition: color 0.3s;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #000;
+      padding: 12px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Dark Mode Toggle */
+    #darkModeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 14px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Slideshow */
+    header.slideshow { margin: 0; position: relative; }
+    .slides img {
+      width: 100%;
+      display: none;
+      min-height: 300px;
+    }
+    .slides img.active {
+      display: block;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .dots button.active { background: #007bff; }
+
+    /* About Us */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    #about img {
+      width: 45%;
+      max-width: 350px;
+    }
+    #about div {
+      width: 50%;
+    }
+
+    /* Services */
+    #services {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    .service-card {
+      margin-bottom: 40px;
+    }
+    .service-card h3 {
+      color: #007bff;
+    }
+
+    /* Contact */
+    #contact {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    .contact-box {
+      background: #f7f9ff;
+      border: 1px solid #e0e7ff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .contact-box a {
+      color: #007bff;
+    }
+
+    /* Footer */
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #121212;
+      color: #e4e4e4;
+    }
+    body.dark-mode .company-header {
+      background: #000;
+    }
+    body.dark-mode .company-title {
+      color: #fff;
+    }
+    body.dark-mode .contact-box {
+      background: #1e1e1e;
+      color: #fff;
+    }
+    body.dark-mode .contact-box a {
+      color: #4c9aff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" aria-pressed="false">Dark Mode</button>
+
+  <!-- Company Header -->
+  <div class="company-header">
+    <h1 class="company-title">VERSAFLEX</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Slideshow -->
+  <header class="slideshow">
+    <div class="slides">
+      <img src="https://via.placeholder.com/1200x300/007bff/ffffff?text=Slide+1" class="active" alt="slide1" />
+      <img src="https://via.placeholder.com/1200x300/333333/ffffff?text=Slide+2" alt="slide2" />
+      <img src="https://via.placeholder.com/1200x300/555555/ffffff?text=Slide+3" alt="slide3" />
+    </div>
+    <div class="dots"></div>
+  </header>
+
+  <!-- About Us with GIF -->
+  <section id="about">
+    <img src="https://media.giphy.com/media/3o7aCVpB1YpZ3F1b0w/giphy.gif" alt="About Us GIF" />
+    <div>
+      <h2>About Us</h2>
+      <p>
+        At <strong>VersaFlex</strong>, we’re a team of passionate professionals dedicated to innovation and transformation.
+        From our humble startup beginnings to becoming a force in the industry, we help businesses modernize, evolve, and lead.
+        Our vision is simple: embrace change and drive impact. Let’s create something powerful—together.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-card">
+      <h3>ISO Conversion Tool</h3>
+      <p>Convert ISO 20022 messages to legacy formats like SWIFT MT seamlessly using our advanced tools.</p>
+    </div>
+    <div class="service-card">
+      <h3>Reconciliation Tool</h3>
+      <p>Ensure accurate, transparent reconciliation of inward and outward bank transactions across branches.</p>
+    </div>
+    <div class="service-card">
+      <h3>Innovation & Consulting</h3>
+      <p>Modernize workflows, adopt future-ready tech, and consult with experts to stay competitive.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <h3>We’d love to hear from you</h3>
+      <p>Email: <a href="mailto:contact@versaflex.in">contact@versaflex.in</a></p>
+      <p>Phone: <a href="tel:+917842697024">+91 78426 97024</a></p>
+      <p>© 2025 VERSAFLEX INDIA PRIVATE LIMITED</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 VERSAFLEX INDIA PRIVATE LIMITED
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.onclick = () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.setAttribute('aria-pressed', isDark);
+      toggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    };
+
+    // Slideshow
+    (function() {
+      const slides = document.querySelectorAll('.slides img');
+      const dotsBox = document.querySelector('.dots');
+      let index = 0, timer;
+
+      slides.forEach((_, i) => {
+        const btn = document.createElement('button');
+        if (i === 0) btn.classList.add('active');
+        btn.onclick = () => show(i, true);
+        dotsBox.appendChild(btn);
+      });
+
+      function show(i, manual = false) {
+        slides[index].classList.remove('active');
+        dotsBox.children[index].classList.remove('active');
+        index = i;
+        slides[index].classList.add('active');
+        dotsBox.children[index].classList.add('active');
+        if (manual) reset();
+      }
+
+      function next() {
+        show((index + 1) % slides.length);
+      }
+
+      function reset() {
+        clearInterval(timer);
+        timer = setInterval(next, 5000);
+      }
+
+      show(0);
+      reset();
+    })();
+  </script>
+</body>
+</html>
