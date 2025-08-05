@@ -11,10 +11,13 @@
     html{scroll-behavior:smooth}
     body{font-family:"Segoe UI",Arial,sans-serif;line-height:1.6;background:#fff;color:#111}
 
+    /* header title */
+    .company-header{text-align:center;padding:20px;font-size:2rem;font-weight:bold}
+
     /* navbar */
     nav{position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;
         padding:15px 30px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-    nav h1{font-size:1.6rem;font-weight:700}
+    nav h1{display:none} /* Hide duplicate h1 since title is now separate */
     nav ul{display:flex;gap:25px;list-style:none}
     nav a{text-decoration:none;color:inherit;font-weight:600}
     #darkModeToggle{margin-left:15px;padding:6px 12px;border:1px solid #ccc;border-radius:4px;cursor:pointer}
@@ -34,7 +37,6 @@
     body.dark-mode .dots button{background:#666}
     body.dark-mode .dots button.active{background:#4c9aff}
 
-   
     body.dark-mode .caption{background:rgba(255,255,255,.12)}
 
     /* service cards */
@@ -55,11 +57,20 @@
     body.dark-mode{background:#121212;color:#e4e4e4}
     body.dark-mode nav{background:#1e1e1e}
     body.dark-mode #scrollTopBtn,body.dark-mode #darkModeToggle{background:#444;color:#fff}
+
+    /* about us layout with gif */
+    .about-container{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:30px}
+    .about-container .text{flex:1}
+    .about-container .gif{flex:1;min-width:280px}
+    .about-container .gif img{width:100%;max-width:400px;border-radius:10px}
   </style>
 </head>
 <body>
 
-  <!-- ----------  NAVBAR ---------- -->
+  <!-- ----------  COMPANY HEADER ---------- -->
+  <div class="company-header">VERSAFLEX</div>
+
+  <!-- ----------  NAVBAR (moved below company heading) ---------- -->
   <nav>
     <h1>VERSAFLEX</h1>
     <ul>
@@ -74,25 +85,32 @@
   <header class="slideshow">
     <div class="slides">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide1.png?raw=true" alt="slide1" class="active">
-      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide2.png?raw=true" alt="slide2    ">
+      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide2.png?raw=true" alt="slide2">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide3.png?raw=true" alt="slide3">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide4.png?raw=true" alt="slide4">
-      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide5.png?raw=true"  alt="slide5">
+      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide5.png?raw=true" alt="slide5">
     </div>
     <div class="caption"></div>
     <div class="dots"></div>
   </header>
 
-  <!-- ----------  ABOUT US ---------- -->
+  <!-- ----------  ABOUT US WITH GIF ---------- -->
   <section id="about">
     <h2>About Us</h2>
-    <p>
-      At <strong>VersaFlex</strong> we are a team of passionate professionals dedicated to making a difference in the world. Founded as a startup, we have grown into a dynamic force in the industry, redefining what's possible every day. Our mission is to transform the way businesses operate. We strive to bring innovation to the forefront by embracing cutting-edge technologies and implementing forward-thinking strategies. Our vision is to make a positive impact not only on our clients but on the industry as a whole.
+    <div class="about-container">
+      <div class="text">
+        <p>
+          At <strong>VersaFlex</strong> we are a team of passionate professionals dedicated to making a difference in the world. Founded as a startup, we have grown into a dynamic force in the industry, redefining what's possible every day. Our mission is to transform the way businesses operate. We strive to bring innovation to the forefront by embracing cutting-edge technologies and implementing forward-thinking strategies. Our vision is to make a positive impact not only on our clients but on the industry as a whole.
 
-VersaFlex began as a humble startup, and our journey has been nothing short of remarkable. From our early days of dreaming big to our present as a dynamic player in the industry, we've consistently pushed the envelope and challenged ourselves to do better. We're excited about the future, and we invite you to be a part of it. Whether you're a client, a partner, or someone looking to join our team, we look forward to the possibility of working with you.
+          VersaFlex began as a humble startup, and our journey has been nothing short of remarkable. From our early days of dreaming big to our present as a dynamic player in the industry, we've consistently pushed the envelope and challenged ourselves to do better. We're excited about the future, and we invite you to be a part of it. Whether you're a client, a partner, or someone looking to join our team, we look forward to the possibility of working with you.
 
-Thank you for considering us as your trusted partner. Let's embark on this journey of innovation and excellence together.
-    </p>
+          Thank you for considering us as your trusted partner. Let's embark on this journey of innovation and excellence together.
+        </p>
+      </div>
+      <div class="gif">
+        <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding GIF">
+      </div>
+    </div>
   </section>
 
   <!-- ----------  SERVICES ---------- -->
@@ -103,14 +121,13 @@ Thank you for considering us as your trusted partner. Let's embark on this journ
       <h3>ISO Conversion Tool</h3>
       <p>
         ISO 2022 messages are typically formatted in XML, but some legacy systems or protocols might use different formats. Conversion tools can help translate ISO 2022 messages into other formats, such as SWIFT MT (Message Type) messages or proprietary message formats vice versa.
-
       </p>
     </div>
 
     <div class="service-card">
       <h3>Reconciliation Tool</h3>
       <p>
-      A Bank Inward and Outward Transactions Reconciliation Tool is a software application used by banks to reconcile and manage financial transactions between different branches of the same bank. The primary purpose of this tool is to ensure accuracy and consistency in the financial records of the bank by reconciling incoming and outgoing transactions among its various branches.
+        A Bank Inward and Outward Transactions Reconciliation Tool is a software application used by banks to reconcile and manage financial transactions between different branches of the same bank. The primary purpose of this tool is to ensure accuracy and consistency in the financial records of the bank by reconciling incoming and outgoing transactions among its various branches.
       </p>
     </div>
 
@@ -123,7 +140,7 @@ Thank you for considering us as your trusted partner. Let's embark on this journ
     </div>
   </section>
 
-  <!-- ----------  CONTACT INFO (no form) ---------- -->
+  <!-- ----------  CONTACT INFO ---------- -->
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-box">
@@ -141,7 +158,7 @@ Thank you for considering us as your trusted partner. Let's embark on this journ
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
-  <!-- ----------  EMBEDDED JS  ---------- -->
+  <!-- ----------  JS  ---------- -->
   <script>
     /* dark-mode toggle */
     const toggle=document.getElementById('darkModeToggle');
@@ -175,7 +192,7 @@ Thank you for considering us as your trusted partner. Let's embark on this journ
         idx=n;
         imgs[idx].classList.add('active');
         dotsBox.children[idx].classList.add('active');
-                if(manual){reset();}
+        if(manual){reset();}
       }
       function next(){show((idx+1)%imgs.length);} 
       function reset(){clearInterval(timer);timer=setInterval(next,6000);} 
@@ -190,6 +207,5 @@ Thank you for considering us as your trusted partner. Let's embark on this journ
       });
     })();
   </script>
-
 </body>
-</html> 
+</html>
