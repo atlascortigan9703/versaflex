@@ -200,7 +200,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="darkmode" aria-pressed="false">Dark Mode</button>
+    <button id="darkmode" aria-pressed="false">Light Mode</button>
   </nav>
 
   <!-- Slideshow -->
@@ -272,9 +272,17 @@
   <script>
     // Dark Mode Toggle
     const toggle = document.getElementById('darkmode');
+
     toggle.onclick = () => {
       document.body.classList.toggle('dark-mode');
-      toggle.setAttribute('aria-pressed', document.body.classList.contains('dark-mode'));
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? "Dark Mode" : "Light Mode";
+      toggle.setAttribute('aria-pressed', isDark);
+    };
+
+    window.onload = () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? "Dark Mode" : "Light Mode";
     };
 
     // Scroll To Top
